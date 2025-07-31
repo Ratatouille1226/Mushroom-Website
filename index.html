@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="adaptive.css">
     <title>Document</title>
 </head>
 <body>
@@ -18,9 +19,13 @@
 
     <div class="wrapper">
 
+        <span class="open__navigation"></span>
+        <div class="navigation__active"></div>
+
         <div class="content">
+
             <div class="information__header">
-                <h1>НазваниеКомпании</h1>
+                <h2>НазваниеКомпании</h2>
                 <p>Производство упаковки для грибов <br><span class="delivery">Доставка по всей России</span></p>
                 <div class="messages">
                     <a href="/"><i class="fa-brands fa-vk"></i></a>
@@ -28,16 +33,54 @@
                     <a href="/"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>  
             </div>
+            
+                <nav class="navigation">
+                    <span class="tabheader__item tabheader__item-active" href="">Продукт</span>
+                    <span class="tabheader__item" href="">Каталог</span>
+                    <span class="tabheader__item" href="">Производство</span>
+                    <span class="tabheader__item" href="">Полезная информация</span>
+                    <span class="tabheader__item" href="">Контакты</span>
+                    <span class="tabheader__item" href="">Галерея</span>
+                </nav>
 
-            <nav class="navigation">
-                <a href="">Продукт</a>
-                <a href="">Каталог</a>
-                <a href="">Производство</a>
-                <a href="">Полезная информация</a>
-                <a href="">Контакты</a>
-                <a href="">Галерея</a>
-            </nav>
-        </div>
+                <div class="tabcontent">
+                    <section class="title__company">
+                        <h1>Мы производим лотки, ящики, пленки для грибов</h1>
+                        <img src="images/title_image.png" alt="Лотки">
+                    </section>
+                </div>
+
+                <div class="tabcontent">
+                    <section class="title__company">
+                        <span>КАТАЛОГ</span>
+                    </section>
+                </div>
+
+                <div class="tabcontent">
+                    <section class="title__company">
+                        <span>ПРОИЗВОДСТВО</span>
+                    </section>
+                </div>
+
+                <div class="tabcontent">
+                    <section class="title__company">
+                        <span>Полезная информация</span>
+                    </section>
+                </div>
+
+                <div class="tabcontent">
+                    <section class="title__company">
+                        <span>Контакты</span>
+                    </section>
+                </div>
+
+                <div class="tabcontent">
+                    <section class="title__company">
+                        <span>Галерея</span>
+                    </section>
+                </div>
+
+            </div>
 
     </div>
 

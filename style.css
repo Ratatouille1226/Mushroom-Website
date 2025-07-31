@@ -2,7 +2,7 @@
 :root {
   --bg-color: #ffffff;
   --text-color: #000000;
-  --header-bg: #c3faff7d;
+  --header-bg: #c3faff;
   --bg-icons-links: rgb(24, 98, 141);
   --button-theme: rgb(52, 160, 255);
   --button-theme-color-text: white;
@@ -12,7 +12,7 @@
 .dark__theme {
   --bg-color: #151515;
   --text-color: #ffffff;
-  --header-bg: #1e1e1ec1;
+  --header-bg: #1e1e1e;
   --bg-icons-links: rgb(202, 202, 202);
   --button-theme: white;
   --button-theme-color-text: black;
@@ -44,6 +44,7 @@ body {
     max-width: 1140px; 
     /* border: 1px solid black; */
     margin-top: 50px;
+    padding: 10px;
 }
 
 /* ШАПКА */
@@ -58,6 +59,7 @@ header {
     text-align: center;
     align-items: center;
     gap: 25px;
+    padding: 5px 10px;
 }
 #theme-toggle {
   padding: 10px 20px;
@@ -96,6 +98,13 @@ header {
 }
 
 /* НАВИГАЦИЯ */
+.tabheader__item-active {
+  border: 4px solid green;
+  border-top-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  padding: 10px;
+  transition: 0.3s ease all;
+}
 .navigation {
   width: 100%;
   height: 80px;
@@ -107,9 +116,72 @@ header {
   align-items: center;
   gap: 50px;
 }
-.navigation a {
+.navigation span {
   font-size: 23px;
   text-decoration: none;
   font-weight: 600;
   color: var(--navigation-color);
+  cursor: pointer;
+}
+.navigation__active {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(45, 45, 45, 0.626);
+  display: none;
+}
+.navigation__active-open {
+display: block;
+}
+.open__navigation {
+  position: absolute;
+  display: none;
+  width: 28px;          /* ширина линий */
+  height: 2px;          /* толщина линии */
+  background: currentColor; /* цвет наследуется от текста, можно задать color на родителе */
+  cursor: pointer;
+  transition: transform 200ms ease;
+  top: 70px;
+  left: 15px;
+  z-index: 100;
+}
+/* Вторая (нижняя) полоска */
+.open__navigation::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -8px;         /* расстояние между полосками */
+  width: 28px;
+  height: 2px;
+  background: currentColor;
+  transition: transform 200ms ease, bottom 200ms ease;
+}
+/* Состояние "меню открыто": превращаем две полоски в крестик */
+.open__navigation.is-open {
+  transform: rotate(45deg);   /* верхняя полоса */
+}
+.open__navigation.is-open::after {
+  bottom: 0;                  /* подтягиваем вторую к центру */
+  transform: rotate(-90deg);  /* пересекается с верхней — получается X */
+}
+
+/* ЗАГОЛОВОК О КОМПАНИИ И КАРТИНКА */
+.title__company {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin-top: 40px;
+  padding: 15px;
+  text-align: center;
+}
+.title__company h1 {
+  font-size: 30px;
+  color: var(--text-color);
+}
+.title__company img {
+  max-width: 600px;
 }
