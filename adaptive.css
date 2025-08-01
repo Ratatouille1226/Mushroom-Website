@@ -1,4 +1,4 @@
-@media (max-width: 970px) {
+@media (max-width: 1000px) {
     .navigation {
         width: 300px;
         height: 300px;
@@ -14,12 +14,14 @@
         gap: 10px;
         background-color: rgb(255, 255, 255);
         transition: 1s ease all;
+        z-index: 1500;
     }
     .navigation span {
         color: rgb(19, 80, 130);
     }
     .open__navigation {
         color: rgb(19, 80, 130);
+        z-index: 1600;
     }
     .navigation__open {
         left: 0px;
@@ -31,6 +33,13 @@
     }
     .open__navigation {
         display: block;
+    }
+    .trays {
+        flex: 1 1 60rem;
+    }
+    .main__trays img {
+        height: 300px;
+        width: 300px;
     }
 }
 
@@ -56,5 +65,9 @@
     #theme-toggle {
         padding: 3px 10px;
         font-size: 10px;
+    }
+        .main__trays img {
+        height: 250px;
+        width: 250px;
     }
 }

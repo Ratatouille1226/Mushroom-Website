@@ -7,16 +7,18 @@
   --button-theme: rgb(52, 160, 255);
   --button-theme-color-text: white;
   --navigation-color: rgb(19, 80, 130);
+  --gradient-about-trace:  linear-gradient(to bottom, #d5f5ff 0%, #bdefff 30%, #ffffff 100%);
 }
 
 .dark__theme {
-  --bg-color: #151515;
+  --bg-color: #1c1c1c;
   --text-color: #ffffff;
   --header-bg: #1e1e1e;
   --bg-icons-links: rgb(202, 202, 202);
   --button-theme: white;
   --button-theme-color-text: black;
   --navigation-color: white;
+  --gradient-about-trace: linear-gradient(to bottom, #1f2e38 0%, #263b47 30%, #151515 100%);
 }
 
 * {
@@ -60,6 +62,7 @@ header {
     align-items: center;
     gap: 25px;
     padding: 5px 10px;
+    z-index: 1000;
 }
 #theme-toggle {
   padding: 10px 20px;
@@ -184,4 +187,43 @@ display: block;
 }
 .title__company img {
   max-width: 600px;
+}
+
+/* О ЛОТКАХ */
+.about__trays {
+  background: var(--gradient-about-trace);
+  width: 100%;
+  position: absolute; 
+  left: 0;
+  box-shadow: 10px 10px 150px #31617c;
+  font-size: 20px;
+}
+.about__trays-inner {
+  max-width: 1140px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+.trays {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  flex: 1 1 10rem;
+  gap: 20px;
+}
+.trays__title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+  text-align: center;
+}
+.trays__title img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
 }
