@@ -41,6 +41,12 @@
         height: 300px;
         width: 300px;
     }
+    .advantages {
+         margin-top: 1000px;
+    }
+    .m {
+        margin-top: 20px;
+    }
 }
 
 @media (max-width: 560px) { 
@@ -50,11 +56,43 @@
     .title__company img {
         max-width: 350px;
     }
+    .advantage__box {
+        margin-top: 30px;
+    }
+        .advantages {
+         margin-top: 1000px;
+    }
+    .m {
+        margin-top: 20px;
+        border-radius: 0px;
+        border-bottom-left-radius: 100px;
+        border-top-right-radius: 100px;
+    }
+    .our__customers {
+        flex-wrap: wrap;
+    }
+    .customer {
+        flex: 1 1 50%;
+    }
+}
+@media (max-width: 500px) { 
+    .advantages {
+         margin-top: 1020px;
+    }
+    .m {
+        margin-top: 20px;
+        border-radius: 0px;
+        border-bottom-left-radius: 50px;
+        border-top-right-radius: 50px;
+    }
 }
 
 @media (max-width: 400px) { 
     header {
         font-size: 12px;
+    }
+        .advantages {
+        text-align: center;
     }
 }
 
@@ -69,5 +107,21 @@
         .main__trays img {
         height: 250px;
         width: 250px;
+    }
+    .advantages {
+        padding: 5px;
+        margin-top: 1000px;
+    }
+    .adventage {
+        font-size: 14px;
+    }
+    .advantage__box h2 {
+        font-size: 16px;
+    }
+    .m {
+        margin-top: 20px;
+        border-radius: 0px;
+        border-bottom-left-radius: 50px;
+        border-top-right-radius: 50px;
     }
 }
