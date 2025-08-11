@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="adaptive.css">
     <title>Document</title>
@@ -204,6 +205,40 @@
                             </div>
                         </div>
                     </section>
+                    <section class="button__choose">
+                        <button class="choose__trays">Выбрать подходящий контейнер</button>
+                    </section>
+                    <section class="slider">
+                        <div class="swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                    <img src="/images/slide_img.png" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/images/slide_img.png" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/images/slide_img.png" alt="">
+                                </div>
+                                      <div class="swiper-slide">
+                                    <img src="/images/slide_img.png" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/images/slide_img.png" alt="">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="/images/slide_img.png" alt="">
+                                </div>
+                            </div>
+
+                            <!-- Кнопки навигации -->
+                            <div class="swiper-button-next"></div>
+                            <div class="swiper-button-prev"></div>
+
+                            <!-- Пагинация -->
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </section>
                 </div>
 
                 <div class="tabcontent">
@@ -241,5 +276,7 @@
     </div>
 
     <script src="dist/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="slider.js"></script>
 </body>
 </html>

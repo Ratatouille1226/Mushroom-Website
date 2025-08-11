@@ -338,6 +338,7 @@ display: block;
   display: flex;
   justify-content: space-around;
   margin-top: 30px;
+  flex-wrap: wrap;
 }
 .convenience__block {
   display: flex;
@@ -349,4 +350,61 @@ display: block;
 .convenience__block img{
   width: 150px;
   height: 150px;
+}
+
+/* КНОПКА ВЫБОРА ЛОТКОВ */
+.button__choose {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.choose__trays {
+  width: 300px;
+  height: 50px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(19, 247, 220);
+  color: rgb(78, 78, 78);
+  font-size: 15px;
+  transition: .5s ease all;
+}
+.choose__trays:hover {
+  transition: .5s ease all;
+   box-shadow: 0px 0px 15px rgb(28, 255, 251);
+}
+
+/* СЛАЙДЕР */
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 65px;
+}
+.swiper-wrapper {
+  cursor: grab;
+}
+.swiper-slide {
+  display: flex;
+  justify-content: center; /* центрируем горизонтально */
+  align-items: center;     /* центрируем вертикально */
+}
+.swiper-slide img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+.swiper {
+  padding-bottom: 50px; /* резервируем место под пагинацию */
+}
+.swiper-pagination {
+  position: absolute !important; /* перебиваем встроенное */
+  bottom: 10px !important;       /* сдвигаем вниз */
+  left: 50% !important;
+  transform: translateX(-50%);
+}
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
 }

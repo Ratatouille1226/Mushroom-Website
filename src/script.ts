@@ -27,7 +27,8 @@ openNavigation?.addEventListener('click', () => {
 //Табы (меню навигации)
 const tabs = document.querySelectorAll<HTMLElement>('.tabheader__item'),
       tabsContent = document.querySelectorAll<HTMLElement>('.tabcontent'),
-      tabsParent = document.querySelector<HTMLElement>('.navigation');
+      tabsParent = document.querySelector<HTMLElement>('.navigation'),
+      chooseTrays = document.querySelector<HTMLElement>('.choose__trays');
       //Вызываю здесь закрытие модалки потому что табы скрываются в бургер на экранах меньше 950 пикселей
       tabs.forEach((item) => {
         item.addEventListener('click', () => {
@@ -66,3 +67,10 @@ tabsParent?.addEventListener('click', (e) => {
       });
     }
 });
+
+
+//Вызываю функции для того чтобы по клику на кнопку "Выбрать контейнер" открывалась страница каталога
+chooseTrays?.addEventListener('click', () => {
+  hideTab();
+  showTab(1);
+})

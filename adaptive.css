@@ -74,6 +74,12 @@
     .customer {
         flex: 1 1 50%;
     }
+    .convenience__block {
+        flex: 1 1 40rem;
+    }
+    .conveniences {
+        gap: 30px;
+    }
 }
 @media (max-width: 500px) { 
     .advantages {
