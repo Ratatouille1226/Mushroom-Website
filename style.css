@@ -9,6 +9,7 @@
   --navigation-color: rgb(19, 80, 130);
   --gradient-about-trace:  linear-gradient(to bottom, #d5f5ff 0%, #bdefff 30%, #ffffff 100%);
   --bg-adventage: rgba(184, 249, 255, 0.429);
+  --footer-bg:  rgba(0, 128, 255, 0.142);
 }
 
 .dark__theme {
@@ -21,6 +22,7 @@
   --navigation-color: white;
   --gradient-about-trace: linear-gradient(to bottom, #1f2e38 0%, #263b47 30%, #151515 100%);
   --bg-adventage: rgba(52, 59, 59, 0.429);
+  --footer-bg:  rgba(68, 85, 102, 0.142);
 }
 
 * {
@@ -397,6 +399,10 @@ display: block;
 }
 .swiper {
   padding-bottom: 50px; /* резервируем место под пагинацию */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 35px;
 }
 .swiper-pagination {
   position: absolute !important; /* перебиваем встроенное */
@@ -407,4 +413,28 @@ display: block;
 .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
+}
+
+/* ФУТЕР */
+footer {
+  width: 100%;
+  background-color: var(--footer-bg);
+  position: relative;
+  bottom: 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 50px;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.name__company {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
