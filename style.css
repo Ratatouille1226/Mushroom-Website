@@ -10,6 +10,7 @@
   --gradient-about-trace:  linear-gradient(to bottom, #d5f5ff 0%, #bdefff 30%, #ffffff 100%);
   --bg-adventage: rgba(184, 249, 255, 0.429);
   --footer-bg:  rgba(0, 128, 255, 0.142);
+  --catalog-border: black;
 }
 
 .dark__theme {
@@ -23,6 +24,7 @@
   --gradient-about-trace: linear-gradient(to bottom, #1f2e38 0%, #263b47 30%, #151515 100%);
   --bg-adventage: rgba(52, 59, 59, 0.429);
   --footer-bg:  rgba(68, 85, 102, 0.142);
+    --catalog-border: rgb(97, 97, 97);
 }
 
 * {
@@ -413,6 +415,49 @@ display: block;
 .swiper-pagination-bullet {
   width: 12px;
   height: 12px;
+}
+
+/* КАТАЛОГ */
+.catalog {
+  margin: 70px 0px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 60px;
+}
+.catalog__trays {
+  height: 350px;
+  border: 1px solid var(--catalog-border);
+  border-radius: 10px;
+  flex: 1 1 25rem;
+  padding: 15px;
+}
+.catalog__trays button {
+  width: 150px;
+  height: 40px;
+  border-radius: 10px;
+  border: none;
+  cursor: pointer;
+  background-color: rgb(19, 247, 220);
+  transition: .5s ease all;
+  color: rgb(62, 62, 62);
+  font-size: 15px;
+}
+.catalog__trays button:hover {
+   transition: .5s ease all;
+   box-shadow: 0px 0px 15px rgb(28, 255, 251);
+}
+.catalog__trays h2 {
+  border-bottom: 2px solid var(--catalog-border);
+}
+.catalog__information{ 
+  display: flex;
+  margin: 20px 10px;
+}
+.catalog__information img {
+  width: 150px;
+  height: 150px;
 }
 
 /* ФУТЕР */

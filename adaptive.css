@@ -108,6 +108,13 @@
         .advantages {
         text-align: center;
     }
+    .catalog__information{ 
+        margin: 20px 2px;
+    }
+    .catalog__information img {
+        width: 100px;
+        height: 100px;
+    }
 }
 
 @media (max-width: 350px) { 
