@@ -18,8 +18,15 @@ openNavigation?.addEventListener('click', () => {
     navigationActive.classList.toggle('navigation__active-open');
   }
 
-   openNavigation.classList.toggle("is-open");
-   navigation?.classList.toggle('navigation__open');
+  openNavigation.classList.toggle("is-open");
+  navigation?.classList.toggle('navigation__open');
+
+  // 🔒 Отключаем / включаем прокрутку
+  if (navigation?.classList.contains('navigation__open')) {
+    document.body.style.overflow = "hidden";   // блокируем скролл
+  } else {
+    document.body.style.overflow = "";         // возвращаем как было
+  }
 });
 
 
@@ -29,14 +36,21 @@ const tabs = document.querySelectorAll<HTMLElement>('.tabheader__item'),
       tabsContent = document.querySelectorAll<HTMLElement>('.tabcontent'),
       tabsParent = document.querySelector<HTMLElement>('.navigation'),
       chooseTrays = document.querySelector<HTMLElement>('.choose__trays');
-      //Вызываю здесь закрытие модалки потому что табы скрываются в бургер на экранах меньше 950 пикселей
-      tabs.forEach((item) => {
-        item.addEventListener('click', () => {
-          navigation?.classList.remove('navigation__open');
-          navigationActive?.classList.remove('navigation__active-open');
-          openNavigation?.classList.toggle("is-open");
-        })
-      })
+
+// Вызываю здесь закрытие модалки потому что табы скрываются в бургер на экранах меньше 950 пикселей
+tabs.forEach((item) => {
+  item.addEventListener('click', () => {
+    navigation?.classList.remove('navigation__open');
+    navigationActive?.classList.remove('navigation__active-open');
+    openNavigation?.classList.remove("is-open"); // ✅ лучше remove чем toggle
+
+    // ✅ Возвращаем скролл после клика по пункту меню
+    document.body.style.overflow = "";
+
+    // ✅ Скроллим в начало страницы
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  })
+})
 
 function hideTab() {
     tabs.forEach((item) => {
