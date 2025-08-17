@@ -68,6 +68,8 @@ chooseTrays?.addEventListener('click', () => {
     hideTab();
     showTab(1);
     document.body.style.overflow = "";
-    // ✅ Скроллим в начало страницы
-    window.scrollTo({ top: 0, behavior: "smooth" });
+    // ⏳ Даем браузеру применить изменения в DOM
+    requestAnimationFrame(() => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
 });
