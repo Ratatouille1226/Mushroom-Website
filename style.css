@@ -465,6 +465,84 @@ display: block;
   height: 150px;
 }
 
+/* ПРОИЗВОДСТВО */
+.images__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.main__image {
+  margin-top: 20px;
+}
+.main__image img {
+  width: 100%;
+  border-radius: 10px;
+}
+.images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 50px;
+}
+.images img {
+  width: 300px;
+  border-radius: 7px;
+}
+.images__container-big {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.images-big {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 30px;
+  padding: 20px;
+}
+.big__img {
+  width: 500px;
+  border-radius: 10px;
+}
+.about__company-descr {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  margin-top: 30px;
+}
+.about__company-descr p:nth-child(1) {
+  font-weight: 700;
+}
+.center {
+  text-align: center;
+}
+.m40 {
+  margin-bottom: 40px;
+}
+
+/* ПОЛЕЗНАЯ ИНФОРМАЦИЯ */
+.questions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+  margin: 40px
+}
+.questions button {
+  width: 80%;
+  height: 60px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 25px;
+}
+
 /* ФУТЕР */
 footer {
   width: 100%;

@@ -81,6 +81,10 @@
     .conveniences {
         gap: 30px;
     }
+    .big__img {
+        width: 300px;
+        border-radius: 10px;
+    }
 }
 @media (max-width: 500px) { 
     .advantages {
