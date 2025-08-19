@@ -1,75 +1,104 @@
 "use strict";
-//Смена темы
-const toggleBtn = document.getElementById("theme-toggle");
-if (toggleBtn) {
-    toggleBtn.addEventListener("click", () => {
-        document.documentElement.classList.toggle("dark__theme");
+document.addEventListener('DOMContentLoaded', () => {
+    //Смена темы
+    const toggleBtn = document.getElementById("theme-toggle");
+    if (toggleBtn) {
+        toggleBtn.addEventListener("click", () => {
+            document.documentElement.classList.toggle("dark__theme");
+        });
+    }
+    //Меню бургер
+    const navigation = document.querySelector('.navigation');
+    const openNavigation = document.querySelector('.open__navigation');
+    const navigationActive = document.querySelector('.navigation__active');
+    openNavigation?.addEventListener('click', () => {
+        if (navigationActive) {
+            navigationActive.classList.toggle('navigation__active-open');
+        }
+        openNavigation.classList.toggle("is-open");
+        navigation?.classList.toggle('navigation__open');
+        // 🔒 Отключаем / включаем прокрутку
+        if (navigation?.classList.contains('navigation__open')) {
+            document.body.style.overflow = "hidden"; // блокируем скролл
+        }
+        else {
+            document.body.style.overflow = ""; // возвращаем как было
+        }
     });
-}
-//Меню бургер
-const navigation = document.querySelector('.navigation');
-const openNavigation = document.querySelector('.open__navigation');
-const navigationActive = document.querySelector('.navigation__active');
-openNavigation?.addEventListener('click', () => {
-    if (navigationActive) {
-        navigationActive.classList.toggle('navigation__active-open');
-    }
-    openNavigation.classList.toggle("is-open");
-    navigation?.classList.toggle('navigation__open');
-    // 🔒 Отключаем / включаем прокрутку
-    if (navigation?.classList.contains('navigation__open')) {
-        document.body.style.overflow = "hidden"; // блокируем скролл
-    }
-    else {
-        document.body.style.overflow = ""; // возвращаем как было
-    }
-});
-//Табы (меню навигации)
-const tabs = document.querySelectorAll('.tabheader__item'), tabsContent = document.querySelectorAll('.tabcontent'), tabsParent = document.querySelector('.navigation'), chooseTrays = document.querySelector('.choose__trays');
-// Вызываю здесь закрытие модалки потому что табы скрываются в бургер на экранах меньше 950 пикселей
-tabs.forEach((item) => {
-    item.addEventListener('click', () => {
-        navigation?.classList.remove('navigation__open');
-        navigationActive?.classList.remove('navigation__active-open');
-        openNavigation?.classList.remove("is-open"); // ✅ лучше remove чем toggle
-        // ✅ Возвращаем скролл после клика по пункту меню
-        document.body.style.overflow = "";
-        // ✅ Скроллим в начало страницы
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-});
-function hideTab() {
+    //Табы (меню навигации)
+    const tabs = document.querySelectorAll('.tabheader__item'), tabsContent = document.querySelectorAll('.tabcontent'), tabsParent = document.querySelector('.navigation'), chooseTrays = document.querySelector('.choose__trays');
+    // Вызываю здесь закрытие модалки потому что табы скрываются в бургер на экранах меньше 950 пикселей
     tabs.forEach((item) => {
-        item.classList.remove('tabheader__item-active');
+        item.addEventListener('click', () => {
+            navigation?.classList.remove('navigation__open');
+            navigationActive?.classList.remove('navigation__active-open');
+            openNavigation?.classList.remove("is-open"); // ✅ лучше remove чем toggle
+            // ✅ Возвращаем скролл после клика по пункту меню
+            document.body.style.overflow = "";
+            // ✅ Скроллим в начало страницы
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
     });
-    tabsContent.forEach((item) => {
-        item.style.display = 'none';
+    function hideTab() {
+        tabs.forEach((item) => {
+            item.classList.remove('tabheader__item-active');
+        });
+        tabsContent.forEach((item) => {
+            item.style.display = 'none';
+        });
+    }
+    hideTab();
+    function showTab(i = 0) {
+        tabs[i].classList.add('tabheader__item-active');
+        tabsContent[i].style.display = 'block';
+    }
+    showTab();
+    tabsParent?.addEventListener('click', (e) => {
+        const target = e.target;
+        if (target && target.classList.contains('tabheader__item')) {
+            tabs.forEach((item, i) => {
+                if (target == item) {
+                    hideTab();
+                    showTab(i);
+                }
+            });
+        }
     });
-}
-hideTab();
-function showTab(i = 0) {
-    tabs[i].classList.add('tabheader__item-active');
-    tabsContent[i].style.display = 'block';
-}
-showTab();
-tabsParent?.addEventListener('click', (e) => {
-    const target = e.target;
-    if (target && target.classList.contains('tabheader__item')) {
-        tabs.forEach((item, i) => {
-            if (target == item) {
-                hideTab();
-                showTab(i);
+    //Вызываю функции для того чтобы по клику на кнопку "Выбрать контейнер" открывалась страница каталога
+    chooseTrays?.addEventListener('click', () => {
+        hideTab();
+        showTab(1);
+        document.body.style.overflow = "";
+        // ⏳ Даем браузеру применить изменения в DOM
+        requestAnimationFrame(() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    });
+    //Модальное окно в галерее где картинка открывается в отдельном окне
+    const modal = document.getElementById("modal");
+    const modalImg = document.getElementById("modal-img");
+    const closeBtn = document.querySelector(".close");
+    document.querySelectorAll(".galery__container img").forEach((img) => {
+        img.addEventListener("click", () => {
+            if (modal && modalImg) {
+                modal.style.display = "block";
+                modalImg.src = img.src;
+                document.body.style.overflow = "hidden";
+            }
+        });
+    });
+    if (closeBtn && modal) {
+        closeBtn.addEventListener("click", () => {
+            modal.style.display = "none";
+            document.body.style.overflow = "";
+        });
+    }
+    if (modal) {
+        modal.addEventListener("click", (e) => {
+            if (e.target === modal) {
+                modal.style.display = "none";
+                document.body.style.overflow = "";
             }
         });
     }
-});
-//Вызываю функции для того чтобы по клику на кнопку "Выбрать контейнер" открывалась страница каталога
-chooseTrays?.addEventListener('click', () => {
-    hideTab();
-    showTab(1);
-    document.body.style.overflow = "";
-    // ⏳ Даем браузеру применить изменения в DOM
-    requestAnimationFrame(() => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-    });
 });

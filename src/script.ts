@@ -1,4 +1,5 @@
-//Смена темы
+document.addEventListener('DOMContentLoaded', () => {
+  //Смена темы
 const toggleBtn: HTMLElement | null = document.getElementById("theme-toggle");
 
 if (toggleBtn) {
@@ -94,3 +95,35 @@ chooseTrays?.addEventListener('click', () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 })
+
+//Модальное окно в галерее где картинка открывается в отдельном окне
+const modal = document.getElementById("modal") as HTMLElement | null;
+const modalImg = document.getElementById("modal-img") as HTMLImageElement | null;
+const closeBtn = document.querySelector(".close") as HTMLElement | null;
+
+document.querySelectorAll<HTMLImageElement>(".galery__container img").forEach((img) => {
+  img.addEventListener("click", () => {
+    if (modal && modalImg) {
+      modal.style.display = "block";
+      modalImg.src = img.src; 
+      document.body.style.overflow = "hidden";
+    }
+  });
+});
+
+if (closeBtn && modal) {
+  closeBtn.addEventListener("click", () => {
+    modal!.style.display = "none";
+    document.body.style.overflow = "";
+  });
+}
+
+if (modal) {
+  modal.addEventListener("click", (e: MouseEvent) => {
+    if (e.target === modal) {
+      modal.style.display = "none";
+      document.body.style.overflow = "";
+    }
+  });
+}
+});
