@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="adaptive.css">
     <title>Document</title>
@@ -47,10 +48,10 @@
                 <div class="tabcontent">
                     <section class="title__company">
                         <h1>Мы производим лотки, ящики, пленки для грибов</h1>
-                        <img src="images/title_image.png" alt="Лотки">
+                        <img src="images/title_image.png" alt="Лотки" data-aos="fade-right">
                     </section>
                     <section class="about__trays">
-                        <div class="about__trays-inner">
+                        <div class="about__trays-inner" data-aos="fade-left">
                             <div class="trays">
                                 <div class="trays__title">
                                     <img src="images/plug.png" alt="Окраска лотка">
@@ -79,7 +80,7 @@
                     <section class="advantages">
                         <h2>Преимущества нашего лотка</h2>
                         <div class="adventages__items">
-                            <div class="adventages__item-block">
+                            <div class="adventages__item-block" data-aos="fade-right">
                                 <div class="adventage">
                                     <img class="advantage__img" src="images/plug.png" alt="">
                                     <span>Устойчивость к образованию трещин от внутреннего напряжения</span>
@@ -97,7 +98,7 @@
                                     <span>Устойчивость к образованию трещин от внутреннего напряжения</span>
                                 </div>
                             </div>
-                            <div class="adventages__item-block">
+                            <div class="adventages__item-block" data-aos="fade-left"> 
                                 <div class="adventage">
                                     <img src="images/plug.png" alt="">
                                     <span>Устойчивость к образованию трещин от внутреннего напряжения</span>
@@ -120,16 +121,16 @@
                     </section>
                     <section class="advantage__box">
                         <h2>Преимущество нашего ящика</h2>
-                        <img src="images/pre.png" alt="">
+                        <img src="images/pre.png" alt="" data-aos="zoom-in">
                     </section>
                     <section class="advantage__box">
                         <h2>Примеры упаковок</h2>
-                        <img src="images/examples.png" alt="">
+                        <img src="images/examples.png" alt="" data-aos="zoom-in">
                     </section>
                     <section class="advantages m">
                         <h2>Наши преимущества</h2>
                         <div class="adventages__items">
-                            <div class="adventages__item-block">
+                            <div class="adventages__item-block" data-aos="fade-right">
                                 <div class="adventage">
                                     <img class="advantage__img" src="images/plug.png" alt="">
                                     <span>Устойчивость к образованию трещин от внутреннего напряжения</span>
@@ -147,7 +148,7 @@
                                     <span>Устойчивость к образованию трещин от внутреннего напряжения</span>
                                 </div>
                             </div>
-                            <div class="adventages__item-block">
+                            <div class="adventages__item-block" data-aos="fade-left">
                                 <div class="adventage">
                                     <img src="images/plug.png" alt="">
                                     <span>Устойчивость к образованию трещин от внутреннего напряжения</span>
@@ -243,11 +244,11 @@
                 </div>
 
                 <!-- КАТАЛОГ  КАТАЛОГ  КАТАЛОГ  КАТАЛОГ  КАТАЛОГ -->
-                <div class="tabcontent">
+                <div class="tabcontent" data-aos="zoom-in">
                     <section class="catalog">
                         <div class="catalog__trays">
                             <h2>Лоток черный 250 гр.(140х118х68) 730 шт./кор.</h2>
-                            <div class="catalog__information">
+                            <div class="catalog__information" data-aos="zoom-in">
                                 <span>Артикул: Лоток синий ПП на 250 грамм грибов из полипропилена (140/118/68 мм), 730 шт./кор.<br> Глубина, мм: 118 <br> Ширина, мм: 140 <br> Высота, мм: 68</span>
                                 <img src="images/img_catalog.png" alt="">
                             </div>
@@ -377,6 +378,7 @@
                     </div>
                 </div>
 
+                <!-- ГАЛЕРЕЯ ГАЛЕРЕЯ ГАЛЕРЕЯ ГАЛЕРЕЯ ГАЛЕРЕЯ  -->
                 <div class="tabcontent">
                     <section class="title__company">
                         <h2>Галерея</h2>
@@ -450,5 +452,12 @@
     <script src="dist/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="slider.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+    AOS.init({
+        duration: 1500, // время анимации
+        once: true      // чтобы анимация проигрывалась один раз
+    });
+    </script>
 </body>
 </html>
