@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         openNavigation.classList.toggle("is-open");
         navigation?.classList.toggle('navigation__open');
-        // 🔒 Отключаем / включаем прокрутку
+        // Отключаем / включаем прокрутку
         if (navigation?.classList.contains('navigation__open')) {
             document.body.style.overflow = "hidden"; // блокируем скролл
         }
@@ -32,10 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
         item.addEventListener('click', () => {
             navigation?.classList.remove('navigation__open');
             navigationActive?.classList.remove('navigation__active-open');
-            openNavigation?.classList.remove("is-open"); // ✅ лучше remove чем toggle
-            // ✅ Возвращаем скролл после клика по пункту меню
+            openNavigation?.classList.remove("is-open"); // лучше remove чем toggle
+            // Возвращаем скролл после клика по пункту меню
             document.body.style.overflow = "";
-            // ✅ Скроллим в начало страницы
+            // Скроллим в начало страницы
             window.scrollTo({ top: 0, behavior: "smooth" });
         });
     });
@@ -69,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
         hideTab();
         showTab(1);
         document.body.style.overflow = "";
-        // ⏳ Даем браузеру применить изменения в DOM
+        // Даем браузеру применить изменения в DOM
         requestAnimationFrame(() => {
             window.scrollTo({ top: 0, behavior: "smooth" });
         });

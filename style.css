@@ -234,9 +234,13 @@ display: block;
   text-align: center;
 }
 .trays__title img {
-  width: 100px;
+  width: 150px;
   height: 100px;
   border-radius: 50%;
+}
+.main__trays img {
+  width: 250px;
+  height: 200px;
 }
 
 /* ПРЕИМУЩЕСТВА ЛОТКА*/
@@ -438,7 +442,11 @@ display: block;
   flex: 1 1 25rem;
   padding: 15px;
 }
-.catalog__trays button {
+.catalog__trays a{
+  position: absolute;
+  text-align: center;
+  text-decoration: none;
+  padding-top: 10px;
   width: 150px;
   height: 40px;
   border-radius: 10px;
@@ -449,7 +457,7 @@ display: block;
   color: rgb(62, 62, 62);
   font-size: 15px;
 }
-.catalog__trays button:hover {
+.catalog__trays a:hover {
    transition: .5s ease all;
    box-shadow: 0px 0px 15px rgb(28, 255, 251);
 }
@@ -462,7 +470,7 @@ display: block;
 }
 .catalog__information img {
   width: 150px;
-  height: 150px;
+  height: 100px;
 }
 
 /* ПРОИЗВОДСТВО */
@@ -534,7 +542,10 @@ display: block;
   gap: 50px;
   margin: 40px
 }
-.questions button {
+.questions a {
+  text-align: center;
+  text-decoration: none;
+  padding-top: 14px;
   width: 80%;
   height: 60px;
   border-radius: 5px;
@@ -545,7 +556,7 @@ display: block;
    transition: 1s ease all;
 }
 
-.questions button:hover {
+.questions a:hover {
      box-shadow: 0px 0px 15px rgb(28, 255, 251);
    transition: 1s ease all;
 }
@@ -570,7 +581,9 @@ display: block;
   margin-top: 50px;
   margin-bottom: 20px;
 }
-.back__call button {
+.back__call a {
+  text-decoration: none;
+  padding-top: 10px;
   width: 300px;
   height: 50px;
   border-radius: 10px;
@@ -580,7 +593,7 @@ display: block;
    background-color: rgb(19, 247, 220);
    transition: 1s ease all;
 }
-.back__call button:hover {
+.back__call a:hover {
    box-shadow: 0px 0px 15px rgb(28, 255, 251);
    transition: 1s ease all;
 }
