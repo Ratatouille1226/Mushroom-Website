@@ -152,8 +152,8 @@ display: block;
 .open__navigation {
   position: absolute;
   display: none;
-  width: 28px;          /* ширина линий */
-  height: 2px;          /* толщина линии */
+  width: 38px;          /* ширина линий */
+  height: 7px;          /* толщина линии */
   background: currentColor; /* цвет наследуется от текста, можно задать color на родителе */
   cursor: pointer;
   transition: transform 200ms ease;
@@ -166,9 +166,9 @@ display: block;
   content: "";
   position: absolute;
   left: 0;
-  bottom: -8px;         /* расстояние между полосками */
-  width: 28px;
-  height: 2px;
+  bottom: -12px;         /* расстояние между полосками */
+  width: 38px;
+  height: 7px;
   background: currentColor;
   transition: transform 200ms ease, bottom 200ms ease;
 }
@@ -388,6 +388,25 @@ display: block;
    box-shadow: 0px 0px 15px rgb(28, 255, 251);
 }
 
+.partners__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 50px 0px;
+}
+.partners__container h2 {
+  margin-bottom: 30px;
+}
+.partners {
+  display: flex;
+  gap: 50px;
+}
+.partner__size img {
+  width: 100px;
+  height: 100px;
+}
+
 /* СЛАЙДЕР */
 .slider {
   display: flex;
@@ -437,19 +456,25 @@ display: block;
 }
 .catalog__trays {
   height: 350px;
-  border: 1px solid var(--catalog-border);
-  border-radius: 10px;
-  flex: 1 1 25rem;
+  width: 250px;
+  /* border: 1px solid var(--catalog-border); */
+  /* border-radius: 10px; */
+  /* flex: 1 1 15rem; */
   padding: 15px;
+  display: flex;
+  flex-direction: column;
+}
+.catalog__trays img {
+  width: 250px;
+  height: 100%;
+  border-radius: 10px;
 }
 .catalog__trays a{
-  position: absolute;
   text-align: center;
   text-decoration: none;
-  padding-top: 10px;
-  width: 150px;
-  height: 40px;
+  margin-top: 15px;
   border-radius: 10px;
+  padding: 10px 5px;
   border: none;
   cursor: pointer;
   background-color: rgb(19, 247, 220);
