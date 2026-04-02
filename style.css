@@ -56,7 +56,6 @@ body {
 }
 
 /* ШАПКА */
-
 header {
     position: fixed;
     height: 50px;
@@ -71,13 +70,71 @@ header {
     z-index: 1000;
 }
 #theme-toggle {
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 10px;
+  position: relative;
+  width: 70px;
+  height: 35px;
+  border-radius: 50px;
   border: none;
-  background-color: var(--button-theme);
-  color: var(--button-theme-color-text);
+  cursor: pointer;
+
+  /* Градиент вместо плоского цвета */
+  background: linear-gradient(135deg, #6c63ff, #4facfe);
+  
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px 8px;
+
+  transition: all 0.3s ease;
 }
+
+/* Иконки */
+#theme-toggle i {
+  font-size: 14px;
+  z-index: 2;
+  opacity: 0.8;
+}
+
+#theme-toggle .fa-moon {
+  color: #ffffff;
+}
+
+#theme-toggle .fa-sun {
+  color: #ffd166;
+}
+
+/* Шарик */
+.toggle-ball {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+
+  /* НЕ белый — теперь адаптивный */
+  background: var(--bg-color);
+
+  border-radius: 50%;
+  left: 5px;
+
+  /* мягкая тень */
+  box-shadow: 0 3px 8px rgba(0,0,0,0.25);
+
+  transition: transform 0.3s ease, background 0.3s ease;
+  z-index: 1;
+}
+
+/* ТЁМНАЯ ТЕМА */
+.dark__theme #theme-toggle {
+  background: linear-gradient(135deg, #2c2c2c, #3a3a3a);
+}
+
+/* Шарик в тёмной теме */
+.dark__theme #theme-toggle .toggle-ball {
+  transform: translateX(35px);
+  background: #ffd166; /* тёплый жёлтый */
+}
+
+
+
 .information__header {
   width: 100%;
   display: flex;
@@ -504,6 +561,7 @@ display: block;
   border-radius: 15px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
 }
 
 .convenience__block:hover {
@@ -645,56 +703,80 @@ display: block;
 }
 
 /* КАТАЛОГ */
+/* КАТАЛОГ */
 .catalog {
-  margin: 70px 0px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 60px;
+  margin: 80px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 35px;
+  padding: 0 20px;
 }
+
+/* КАРТОЧКА */
 .catalog__trays {
-  height: 350px;
-  width: 250px;
-  /* border: 1px solid var(--catalog-border); */
-  /* border-radius: 10px; */
-  /* flex: 1 1 15rem; */
-  padding: 15px;
+  background: var(--bg-color);
+  border-radius: 18px;
+  overflow: hidden;
+
   display: flex;
   flex-direction: column;
+  align-items: stretch; /* ВАЖНО — растягиваем */
+
+  padding: 15px;
+
+  border: 1px solid var(--catalog-border);
+
+  transition: all 0.3s ease;
 }
+
+/* КАРТИНКА — теперь шире */
 .catalog__trays img {
-  width: 250px;
-  height: 100%;
-  border-radius: 10px;
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+
+  margin-bottom: 15px;
+
+  background: transparent; /* убрали фон */
 }
-.catalog__trays a{
+
+/* hover */
+.catalog__trays:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+  border-color: var(--button-theme);
+}
+
+.catalog__trays:hover img {
+  transform: scale(1.05);
+  transition: 0.3s;
+}
+
+/* КНОПКА (десктоп — outline) */
+.catalog__trays a {
+  width: 100%;
   text-align: center;
   text-decoration: none;
-  margin-top: 15px;
-  border-radius: 10px;
-  padding: 10px 5px;
-  border: none;
-  cursor: pointer;
-  background-color: var(--button-theme);
-  color: var(--button-theme-color-text);
-  transition: .5s ease all;
-  font-size: 15px;
+
+  padding: 12px;
+  border-radius: 12px;
+
+  background: transparent;
+  color: var(--button-theme);
+
+  border: 1px solid var(--button-theme);
+
+  font-size: 14px;
+  font-weight: 500;
+
+  transition: all 0.3s ease;
 }
+
+/* hover кнопки */
 .catalog__trays a:hover {
-   transition: .5s ease all;
-    box-shadow: 0 0 15px var(--button-theme);
-}
-.catalog__trays h2 {
-  border-bottom: 2px solid var(--catalog-border);
-}
-.catalog__information{ 
-  display: flex;
-  margin: 20px 10px;
-}
-.catalog__information img {
-  width: 150px;
-  height: 100px;
+  background: var(--button-theme);
+  color: var(--button-theme-color-text);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
 }
 
 /* ПРОИЗВОДСТВО */

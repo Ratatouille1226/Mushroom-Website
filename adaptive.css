@@ -71,6 +71,26 @@
     font-size: 1rem;
     max-width: 250px;
   }
+  .catalog {
+    grid-template-columns: 1fr; /* одна колонка */
+  }
+
+  .catalog__trays {
+    max-width: 450px;
+    margin: 0 auto; /* по центру */
+  }
+
+  .catalog__trays img {
+    height: 450px; /* как ты хотел */
+  }
+
+  .catalog__trays a {
+    background: var(--button-theme);
+    color: var(--button-theme-color-text);
+    border: none;
+    font-size: 16px;
+    padding: 14px;
+  }
 }
 
 @media (max-width: 560px) { 
