@@ -427,43 +427,86 @@
                     </section>
                     <div class="galery__container">
                         <div class="galery__item">
-                            <img src="images/заглушкаГалереи.png" alt="">
+                            <video class="gallery-video">
+                                <source src="images/video1.mp4" type="video/mp4">
+                            </video>
+
                             <div class="overlay">Посмотреть</div>
                         </div>
                         <div class="galery__item">
-                            <img src="images/заглушкаГалереи.png" alt="">
+                            <img src="images/RAWW5521.jpg" alt="">
                             <div class="overlay">Посмотреть</div>
                         </div>
                         <div class="galery__item">
-                            <img src="images/заглушкаГалереи.png" alt="">
+                            <img src="images/RAWW5522.jpg" alt="">
                             <div class="overlay">Посмотреть</div>
                         </div>
                         <div class="galery__item">
-                            <img src="images/заглушкаГалереи.png" alt="">
+                            <img src="images/RAWW5527.jpg" alt="">
                             <div class="overlay">Посмотреть</div>
                         </div>
                         <div class="galery__item">
-                            <img src="images/заглушкаГалереи.png" alt="">
+                            <img src="images/RAWW5528.jpg" alt="">
                             <div class="overlay">Посмотреть</div>
                         </div>
                         <div class="galery__item">
-                            <img src="images/заглушкаГалереи.png" alt="">
+                            <img src="images/RAWW5529.jpg" alt="">
                             <div class="overlay">Посмотреть</div>
                         </div>
                         <div class="galery__item">
-                            <img src="images/заглушкаГалереи.png" alt="">
+                            <img src="images/RAWW5532.jpg" alt="">
                             <div class="overlay">Посмотреть</div>
                         </div>
                         <div class="galery__item">
-                            <img src="images/заглушкаГалереи.png" alt="">
+                            <img src="images/RAWW5533.jpg" alt="">
                             <div class="overlay">Посмотреть</div>
                         </div>
                         <div class="galery__item">
-                            <img src="images/заглушкаГалереи.png" alt="">
+                            <img src="images/RAWW5535.jpg" alt="">
                             <div class="overlay">Посмотреть</div>
                         </div>
                         <div class="galery__item">
-                            <img src="images/заглушкаГалереи.png" alt="">
+                            <img src="images/RAWW5536.jpg" alt="">
+                            <div class="overlay">Посмотреть</div>
+                        </div>
+                        <div class="galery__item">
+                            <img src="images/RAWW5538.jpg" alt="">
+                            <div class="overlay">Посмотреть</div>
+                        </div>
+                        <div class="galery__item">
+                            <img src="images/RAWW5541.jpg" alt="">
+                            <div class="overlay">Посмотреть</div>
+                        </div>
+                        <div class="galery__item">
+                            <img src="images/RAWW5542.jpg" alt="">
+                            <div class="overlay">Посмотреть</div>
+                        </div>
+                        <div class="galery__item">
+                            <img src="images/RAWW5547.jpg" alt="">
+                            <div class="overlay">Посмотреть</div>
+                        </div>
+                        <div class="galery__item">
+                            <img src="images/RAWW5551.jpg" alt="">
+                            <div class="overlay">Посмотреть</div>
+                        </div>
+                        <div class="galery__item">
+                            <img src="images/RAWW5561.jpg" alt="">
+                            <div class="overlay">Посмотреть</div>
+                        </div>
+                        <div class="galery__item">
+                            <img src="images/RAWW5562.jpg" alt="">
+                            <div class="overlay">Посмотреть</div>
+                        </div>
+                        <div class="galery__item">
+                            <img src="images/RAWW5563.jpg" alt="">
+                            <div class="overlay">Посмотреть</div>
+                        </div>
+                        <div class="galery__item">
+                            <img src="images/RAWW5569.jpg" alt="">
+                            <div class="overlay">Посмотреть</div>
+                        </div>
+                        <div class="galery__item">
+                            <img src="images/RAWW5570.jpg" alt="">
                             <div class="overlay">Посмотреть</div>
                         </div>
                     </div>
@@ -500,6 +543,36 @@
         duration: 1500, // время анимации
         once: true      // чтобы анимация проигрывалась один раз
     });
+
+        const videos = document.querySelectorAll('.gallery-video');
+
+        videos.forEach(video => {
+            video.addEventListener('click', async () => {
+
+                // включаем controls
+                video.setAttribute('controls', true);
+
+                // полноэкранный режим
+                if (video.requestFullscreen) {
+                    await video.requestFullscreen();
+                } else if (video.webkitRequestFullscreen) {
+                    await video.webkitRequestFullscreen();
+                } else if (video.msRequestFullscreen) {
+                    await video.msRequestFullscreen();
+                }
+
+                // запускаем видео
+                video.play();
+            });
+
+            // когда выходим из fullscreen
+            document.addEventListener('fullscreenchange', () => {
+                if (!document.fullscreenElement) {
+                    video.pause();
+                    video.removeAttribute('controls');
+                }
+            });
+        });
     </script>
 </body>
 </html>
